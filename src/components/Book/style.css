@@ -1,0 +1,57 @@
+.shelf .book-list {
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shelf .book {
+  width: calc(20% - 30px);
+  height: 208px;
+  margin: 15px;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  .shelf .book {
+    max-width: 127px;
+  }
+}
+
+.shelf .book img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shelf .select {
+  position: absolute;
+  right: 13px;
+  bottom: -14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  border: 1px solid rgba(53, 53, 53, 0.15);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.12);
+  background: url('../../assets/icons/more-vertical.svg') center no-repeat #F1F1F1;
+  background-size: 65%;
+  overflow: hidden;
+}
+
+.shelf .select:hover {
+  background-color: #d8d8d8;
+}
+
+.shelf select {
+  cursor: pointer;
+  opacity: 0;
+  width: 100%;
+  height: 38px;
+}

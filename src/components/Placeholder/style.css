@@ -1,0 +1,9 @@
+.skeleton {
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.skeleton li {
+  margin: 15px;
+}

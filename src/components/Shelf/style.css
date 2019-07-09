@@ -1,0 +1,12 @@
+.shelf {
+  margin-bottom: 36px;
+}
+
+.shelf h3 {
+  color: #232323;
+  font-size: 24px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid #2223;
+}

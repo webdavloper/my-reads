@@ -1,0 +1,18 @@
+.search-input {
+  margin: 20px 0;
+  max-width: 878px;
+  margin: 64px auto;
+  border: 1px solid rgba(84, 90, 100, 0.7);
+  border-radius: 8px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input input {
+  display: inline-block;
+  padding: 16px 16px;
+  flex: 1;
+  border: 0;
+  outline: 0;
+}

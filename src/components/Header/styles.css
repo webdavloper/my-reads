@@ -1,0 +1,14 @@
+.header {
+  padding: 51px 20px;
+  text-align: center;
+  background-color:  #292929;
+}
+
+.header .logo a {
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+}
