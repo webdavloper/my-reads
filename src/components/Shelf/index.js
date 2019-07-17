@@ -11,7 +11,7 @@ const Shelf = props => {
     <div className="shelf">
       <h3>{title} ({total})</h3>
 
-      {loading === true && <Placeholder />}
+      {loading && <Placeholder />}
 
       <ul className="book-list">
         {books.map(book =>

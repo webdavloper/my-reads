@@ -14,19 +14,14 @@ class App extends Component {
     loading: true
   }
 
-  changeShelf = (book, shelf) => {
+  changeShelf = (book, shelf, callback) => {
     let { books } = this.state
+    book.shelf = shelf
+    books = [...books.filter(b => b.id !== book.id), book]
 
-    try {
-      book.shelf = shelf
-      books = [...books.filter(b => b.id !== book.id), book]
+    this.setState({ books })
 
-      this.setState({ books })
-
-      update(book, shelf)
-    } catch (err) {
-      console.log(err)
-    }
+    update(book, shelf)
   }
 
   async componentDidMount() {
@@ -35,6 +30,8 @@ class App extends Component {
   }
 
   render() {
+    const { books, loading } = this.state
+    const { changeShelf } = this
     return (
       <BrowserRouter>
         <div className="app">
@@ -42,13 +39,16 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={() => (
               <Home
-                books={this.state.books}
-                loading={this.state.loading}
-                onChangeShelf={this.changeShelf}
+                books={books}
+                loading={loading}
+                onChangeShelf={changeShelf}
               />
             )} />
             <Route path="/search" render={() =>
-              <Search onChangeShelf={this.changeShelf} />
+              <Search
+              onChangeShelf={changeShelf}
+              title="Type something to see results 🚀"
+              />
             }
             />
             <Redirect from="*" to="/" />

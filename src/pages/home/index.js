@@ -13,7 +13,7 @@ class Home extends Component {
     const { loading, books, onChangeShelf } = this.props
 
     return (
-      <main>
+      <main id="home">
         <Shelf
           loading={loading}
           title="Reading"

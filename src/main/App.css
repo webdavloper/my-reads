@@ -9,7 +9,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
+  background-color: rgb(248, 249, 250);
+}
+
+main {
+  position: relative;
+  padding: 0 20px;
+  max-width: 908px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
 }
 
 li {

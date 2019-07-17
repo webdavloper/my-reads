@@ -1,8 +1,4 @@
-main {
-  position: relative;
-  padding: 0 20px;
-  max-width: 908px;
-  margin: 80px auto;
-  background-color: #ffffff;
-  overflow: hidden;
+main#home {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }

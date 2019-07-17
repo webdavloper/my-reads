@@ -7,3 +7,7 @@
 .skeleton li {
   margin: 15px;
 }
+
+.skeleton li span {
+  margin: 4px 0;
+}
