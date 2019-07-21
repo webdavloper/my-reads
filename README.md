@@ -2,7 +2,7 @@
 
 MyReads React App is a project about book shelves that is required as an evaluation by [Udacity Advanced Web Front-End Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).
 
-![MyReads](https://i.imgur.com/a3GdIPd.gif)
+![MyReads](https://i.imgur.com/M3NIRSA.png)
 
 ## Installation:
 
