@@ -34,6 +34,32 @@
   object-fit: cover;
 }
 
+.shelf .book__cover a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255,255,255,0.7);
+  transition: none;
+}
+
+.shelf .book__cover a:hover:after {
+  width: 120%;
+  background-color: rgba(255,255,255,0);
+  transition: all 0.4s ease-in-out;
+}
+
+.shelf .book__maturity-rating {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  background-color: orange;
+  color: #fff;
+  padding: 2px 8px;
+}
+
 .book .book__options {
   position: absolute;
   right: 13px;

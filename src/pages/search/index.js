@@ -1,6 +1,6 @@
 import './style.css'
 import React, { Component } from 'react'
-import { search, update } from '../../api/BooksAPI'
+import { search } from '../../api/BooksAPI'
 import { Search as SearchIcon } from 'react-feather'
 import PropTypes from 'prop-types'
 
@@ -9,12 +9,13 @@ import Book from '../../components/Book'
 class Search extends Component {
 
   static propTypes = {
-    book: PropTypes.array,
-    onChangeShelf: PropTypes.func.isRequired
+    books: PropTypes.array,
+    onChangeShelf: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired
   }
 
   state = {
-    books: this.props.books,
+    // books: this.props.books,
     title: this.props.title,
     query: '',
     result: []
@@ -28,29 +29,33 @@ class Search extends Component {
   }
 
   searchBook = async ({ target: { value: query } }) => {
-    if (query.length) {
-      const result = await search(query)
-      const { error } = result
+    try {
+      if (query.length) {
+        const result = await search(query)
+        const { error } = result
 
-      if (!error) {
-        this.setState((state, props) => ({
-          result,
-          query,
-          title: `Showing results for `
-        }))
+        if (!error) {
+          this.setState((state, props) => ({
+            result,
+            query,
+            title: `Showing results for `
+          }))
+        } else {
+          this.setState((state, props) => ({
+            result: [],
+            query: '',
+            title: 'No books found. 🙁'
+          }))
+        }
       } else {
         this.setState((state, props) => ({
           result: [],
           query: '',
-          title: 'No books found. 🙁'
+          title: props.title
         }))
       }
-    } else {
-      this.setState((state, props) => ({
-        result: [],
-        query: '',
-        title: props.title
-      }))
+    } catch (error) {
+      console.log(error)
     }
   }
 
